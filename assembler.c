@@ -414,6 +414,7 @@ char* assembler_interpreter(const char* program) {
   return output;
 }
 
+// Test it on a sample program
 int main(void) {
   char* test_program = "mov a, 8   ; instruction mov a, 8\nmov g, 10   ; instruction mov g, 10\ncall func\nmsg 'Random result: ', o\nend\nfunc:\n\tcmp a, g\n\tje exit\n\tmov o, a\n\tadd o, g\n\tret\n; Do nothing\nexit:\n\tmsg 'Do nothing'";
   char* output = assembler_interpreter(test_program);
